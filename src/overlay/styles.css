@@ -312,7 +312,9 @@
 }
 
 .overlay-root {
-  display: inline-block;
+  /* Block, not inline-block: an inline-level box sits on the baseline of a line box and leaves a descender gap
+     (7 px at 16 px text) below the SVG, so the page measured 480x307 instead of 480x300. */
+  display: block;
   margin: 0;
   padding: 0;
 }
